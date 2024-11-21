@@ -2,6 +2,8 @@ import 'package:flutter/material.dart';
 import 'package:socks_store/global/consts.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
+import 'input_textfield.dart';
+
 class SignUpScreenBody extends StatelessWidget {
   const SignUpScreenBody({super.key});
 
@@ -35,6 +37,116 @@ class SignUpScreenBody extends StatelessWidget {
                       fontSize: 48.sp,
                       fontWeight: FontWeight.w400,
                     ),
+                  ),
+                  SizedBox(
+                    height: 30.h,
+                  ),
+                  SelectableText(
+                    "Email",
+                    style: TextStyle(
+                      color: textColor,
+                      fontSize: 18.sp,
+                      fontWeight: FontWeight.w400,
+                    ),
+                  ),
+                  SizedBox(
+                    height: 10.h,
+                  ),
+                  InputTextfield(
+                    icon: Icons.mail_outline,
+                    hintText: "Enter your mail",
+                    keyboardType: TextInputType.emailAddress,
+                    controller: TextEditingController(),
+                  ),
+                  SizedBox(
+                    height: 30.h,
+                  ),
+                  SelectableText(
+                    "Password",
+                    style: TextStyle(
+                      color: textColor,
+                      fontSize: 18.sp,
+                      fontWeight: FontWeight.w400,
+                    ),
+                  ),
+                  SizedBox(
+                    height: 10.h,
+                  ),
+                  InputTextfield(
+                    icon: Icons.lock,
+                    hintText: "Enter your Password",
+                    keyboardType: TextInputType.text,
+                    controller: TextEditingController(),
+                  ),
+                  SizedBox(
+                    height: 10.h,
+                  ),
+                  Center(
+                    child: GestureDetector(
+                      onTap: () {},
+                      child: SelectableText(
+                        "Forget Password",
+                        style: TextStyle(
+                          color: textColor,
+                          fontSize: 18.sp,
+                          fontWeight: FontWeight.w400,
+                        ),
+                      ),
+                    ),
+                  ),
+                  SizedBox(
+                    height: 50.h,
+                  ),
+                  Center(
+                    child: Container(
+                      height: 78.h,
+                      width: 284.w,
+                      decoration: BoxDecoration(
+                          borderRadius: BorderRadius.circular(30.h),
+                          color: primaryColor,
+                          border: Border.all(color: textColor)),
+                      child: GestureDetector(
+                        onTap: () {
+                          // Navigator.push(
+                          //     context,
+                          //     MaterialPageRoute(
+                          //         builder: (context) => (SignUpScreen())));
+                        },
+                        child: Center(
+                            child: Text(
+                          "NEXT",
+                          style: TextStyle(
+                              letterSpacing: 1.sp,
+                              color: textColor,
+                              fontSize: 36.sp,
+                              fontWeight: FontWeight.normal),
+                        )),
+                      ),
+                    ),
+                  ),
+                  SizedBox(
+                    height: 20.h,
+                  ),
+                  Row(
+                    mainAxisAlignment: MainAxisAlignment.center,
+                    children: [
+                      SelectableText(
+                        "Already have an account?",
+                        style: TextStyle(
+                          color: textColor,
+                          fontSize: 18.sp,
+                          fontWeight: FontWeight.w400,
+                        ),
+                      ),
+                      SelectableText(
+                        "SIGN IN",
+                        style: TextStyle(
+                          color: textColor,
+                          fontSize: 18.sp,
+                          fontWeight: FontWeight.w900,
+                        ),
+                      ),
+                    ],
                   )
                 ],
               ),

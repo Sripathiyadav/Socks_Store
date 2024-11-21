@@ -85,7 +85,21 @@ class StartScreenBody extends StatelessWidget {
             ),
           ),
           SizedBox(
-            height: 40.h,
+            height: 20.h,
+          ),
+          Padding(
+            padding: const EdgeInsets.symmetric(horizontal: 12.0),
+            child: Wrap(
+              children: [
+                SelectableText(
+                  "Please note that this application is a prototype intended solely to showcase my coding skills. It does not connect to any online stores or databases. The app only contains the developer’s contact details.",
+                  style: TextStyle(
+                      fontSize: 12.sp,
+                      color: textColor,
+                      fontWeight: FontWeight.w500),
+                ),
+              ],
+            ),
           ),
         ],
       ),
