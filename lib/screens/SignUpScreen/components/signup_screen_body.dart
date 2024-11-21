@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:socks_store/global/consts.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:socks_store/screens/HomeScreen/homescreen.dart';
 
 import 'input_textfield.dart';
 
@@ -83,8 +84,13 @@ class SignUpScreenBody extends StatelessWidget {
                   ),
                   Center(
                     child: GestureDetector(
-                      onTap: () {},
-                      child: SelectableText(
+                      onTap: () {
+                        Navigator.push(
+                            context,
+                            MaterialPageRoute(
+                                builder: (context) => (HomeScreen())));
+                      },
+                      child: Text(
                         "Forget Password",
                         style: TextStyle(
                           color: textColor,
@@ -107,10 +113,10 @@ class SignUpScreenBody extends StatelessWidget {
                           border: Border.all(color: textColor)),
                       child: GestureDetector(
                         onTap: () {
-                          // Navigator.push(
-                          //     context,
-                          //     MaterialPageRoute(
-                          //         builder: (context) => (SignUpScreen())));
+                          Navigator.push(
+                              context,
+                              MaterialPageRoute(
+                                  builder: (context) => (HomeScreen())));
                         },
                         child: Center(
                             child: Text(
@@ -138,12 +144,20 @@ class SignUpScreenBody extends StatelessWidget {
                           fontWeight: FontWeight.w400,
                         ),
                       ),
-                      SelectableText(
-                        "SIGN IN",
-                        style: TextStyle(
-                          color: textColor,
-                          fontSize: 18.sp,
-                          fontWeight: FontWeight.w900,
+                      GestureDetector(
+                        onTap: () {
+                          Navigator.push(
+                              context,
+                              MaterialPageRoute(
+                                  builder: (context) => (HomeScreen())));
+                        },
+                        child: Text(
+                          "SIGN IN",
+                          style: TextStyle(
+                            color: textColor,
+                            fontSize: 18.sp,
+                            fontWeight: FontWeight.w900,
+                          ),
                         ),
                       ),
                     ],
