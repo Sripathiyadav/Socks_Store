@@ -104,20 +104,20 @@ class SignUpScreenBody extends StatelessWidget {
                     height: 50.h,
                   ),
                   Center(
-                    child: Container(
-                      height: 78.h,
-                      width: 284.w,
-                      decoration: BoxDecoration(
-                          borderRadius: BorderRadius.circular(30.h),
-                          color: primaryColor,
-                          border: Border.all(color: textColor)),
-                      child: GestureDetector(
-                        onTap: () {
-                          Navigator.push(
-                              context,
-                              MaterialPageRoute(
-                                  builder: (context) => (HomeScreen())));
-                        },
+                    child: GestureDetector(
+                      onTap: () {
+                        Navigator.push(
+                            context,
+                            MaterialPageRoute(
+                                builder: (context) => (HomeScreen())));
+                      },
+                      child: Container(
+                        height: 78.h,
+                        width: 284.w,
+                        decoration: BoxDecoration(
+                            borderRadius: BorderRadius.circular(30.h),
+                            color: primaryColor,
+                            border: Border.all(color: textColor)),
                         child: Center(
                             child: Text(
                           "NEXT",

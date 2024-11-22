@@ -8,5 +8,8 @@ const String signupimag = "assets/1A 1.png";
 const String socks1 = "assets/1C 1.png";
 const String socks2 = "assets/Rectangle 13.png";
 const String socks3 = "assets/Rectangle 14.png";
-//const String signupimag = "assets/1A 1.png";
-
+const String linkedin = "assets/linkedin.png";
+const String github = "assets/github.png";
+const String instagram = "assets/instagram.png";
+const String web = "assets/web.png";
+const String gmail = "assets/gmail.png";

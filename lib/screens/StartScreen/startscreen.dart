@@ -7,9 +7,15 @@ class StartScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      backgroundColor: primaryColor,
-      body: StartScreenBody(),
+    return WillPopScope(
+      onWillPop: () async {
+        // Returning false prevents the back action
+        return false;
+      },
+      child: Scaffold(
+        backgroundColor: primaryColor,
+        body: StartScreenBody(),
+      ),
     );
   }
 }
