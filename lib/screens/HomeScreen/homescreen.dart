@@ -1,8 +1,9 @@
 import 'package:flutter/material.dart';
+import 'package:socks_store/global/bot_nav_bar.dart';
 import 'package:socks_store/global/consts.dart';
+import 'package:socks_store/screens/HomeScreen/components/homescreen_body.dart';
 import 'package:socks_store/screens/ProfileScreen/profilescreen.dart';
 import 'package:socks_store/screens/SignUpScreen/components/input_textfield.dart';
-import 'components/homescreen_body.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 class HomeScreen extends StatelessWidget {
@@ -31,17 +32,20 @@ class HomeScreen extends StatelessWidget {
                       style: TextStyle(color: textColor, fontSize: 36.sp),
                     ),
                     IconButton(
-                        onPressed: () {
-                          Navigator.push(
-                              context,
-                              MaterialPageRoute(
-                                  builder: (context) => ProfileScreen()));
-                        },
-                        icon: Icon(
-                          Icons.account_circle,
-                          color: textColor,
-                          size: 40.sp,
-                        )),
+                      onPressed: () {
+                        Navigator.push(
+                          context,
+                          MaterialPageRoute(
+                            builder: (context) => ProfileScreen(),
+                          ),
+                        );
+                      },
+                      icon: Icon(
+                        Icons.account_circle,
+                        color: textColor,
+                        size: 40.sp,
+                      ),
+                    ),
                   ],
                 ),
                 SizedBox(height: 10.h),
@@ -58,7 +62,9 @@ class HomeScreen extends StatelessWidget {
           ),
         ),
         body: HomeScreenBody(),
-        // bottomNavigationBar: BottomNavigationBar(items: ),
+        bottomNavigationBar: CustomBottomNavBar(
+          selectedIndex: 0,
+        ),
       ),
     );
   }

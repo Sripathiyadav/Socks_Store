@@ -7,7 +7,7 @@ class InputTextfield extends StatefulWidget {
   final TextEditingController controller;
   final String hintText;
   final TextInputType? keyboardType;
-  const InputTextfield(
+   InputTextfield(
       {super.key,
       this.icon,
       required this.controller,

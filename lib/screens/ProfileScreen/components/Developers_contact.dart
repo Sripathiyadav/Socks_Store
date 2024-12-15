@@ -56,6 +56,14 @@ class DevelopersContact extends StatelessWidget {
                 url: 'https://github.com/Sripathiyadav',
               ),
               SizedBox(
+                height: 20.h,
+              ),
+              ContactTile(
+                text: "Instagram",
+                logo: instagram,
+                url: 'https://www.instagram.com/sripathi_yadav_8/',
+              ),
+              SizedBox(
                 height: 60.h,
               ),
               Center(

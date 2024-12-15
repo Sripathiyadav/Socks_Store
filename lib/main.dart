@@ -10,23 +10,24 @@ void main() {
 class MyApp extends StatelessWidget {
   const MyApp({super.key});
 
-  // This widget is the root of your application.
   @override
   Widget build(BuildContext context) {
     return ScreenUtilInit(
       designSize: const Size(428, 926),
       splitScreenMode: true,
       minTextAdapt: true,
-      child: MaterialApp(
-        title: 'Flutter Demo',
-        theme: ThemeData(
-          textTheme: GoogleFonts.balooThambi2TextTheme(),
-          colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
-          useMaterial3: true,
-        ),
-        debugShowCheckedModeBanner: false,
-        home: StartScreen(),
-      ),
+      builder: (context, child) {
+        return MaterialApp(
+          // title: 'Socks Store',
+          theme: ThemeData(
+            textTheme: GoogleFonts.balooThambi2TextTheme(),
+            colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
+            useMaterial3: true,
+          ),
+          debugShowCheckedModeBanner: false,
+          home: StartScreen(),
+        );
+      },
     );
   }
 }
