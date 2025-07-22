@@ -6,6 +6,8 @@ import 'components/notifications_screen_body.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 class NotificationsScreen extends StatelessWidget {
+  const NotificationsScreen({super.key});
+
   @override
   Widget build(BuildContext context) {
     return WillPopScope(

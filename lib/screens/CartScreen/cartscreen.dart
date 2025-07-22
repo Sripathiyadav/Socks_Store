@@ -6,6 +6,8 @@ import 'components/cartscreen_body.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 class CartScreen extends StatelessWidget {
+  const CartScreen({super.key});
+
   @override
   Widget build(BuildContext context) {
     return WillPopScope(

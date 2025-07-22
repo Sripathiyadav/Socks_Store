@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:socks_store/global/consts.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:socks_store/screens/HomeScreen/homescreen.dart';
+import 'package:socks_store/screens/SignInScreen/signinscreen.dart';
 
 import 'input_textfield.dart';
 
@@ -33,7 +34,7 @@ class SignUpScreenBody extends StatelessWidget {
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
                     SelectableText(
-                      "Sign up",
+                      "SIGN UP",
                       style: TextStyle(
                         color: textColor,
                         fontSize: 48.sp,
@@ -150,7 +151,7 @@ class SignUpScreenBody extends StatelessWidget {
                             Navigator.push(
                                 context,
                                 MaterialPageRoute(
-                                    builder: (context) => (HomeScreen())));
+                                    builder: (context) => (SigninScreen())));
                           },
                           child: Text(
                             "SIGN IN",

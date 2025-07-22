@@ -9,9 +9,9 @@ class CustomBottomNavBar extends StatefulWidget {
   final int selectedIndex;
 
   const CustomBottomNavBar({
-    Key? key,
+    super.key,
     required this.selectedIndex,
-  }) : super(key: key);
+  });
 
   @override
   _CustomBottomNavBarState createState() => _CustomBottomNavBarState();

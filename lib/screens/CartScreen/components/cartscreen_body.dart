@@ -1,59 +1,25 @@
-
 import 'package:flutter/material.dart';
+import 'package:lottie/lottie.dart';
 
 class CartScreenBody extends StatelessWidget {
+  const CartScreenBody({super.key});
+
   @override
   Widget build(BuildContext context) {
     return SingleChildScrollView(
       child: Column(
         children: [
-          
-    // Code for Basic screen body with four blocks
-    Column(
-      mainAxisAlignment: MainAxisAlignment.center,
-      crossAxisAlignment: CrossAxisAlignment.center,
-      children: [
-        // First Block
-        Container(
-          height: 100,
-          color: Colors.blue,
-          child: Center(
-            child: Text('Block 1'),
+          // C
+          Lottie.asset(
+            "assets/Vector-1.json",
+            width: 200,
+            height: 200,
+            fit: BoxFit.contain,
+            repeat: false,
+            animate: true,
           ),
-        ),
-        SizedBox(height: 20),
-        // Second Block
-        Container(
-          height: 100,
-          color: Colors.green,
-          child: Center(
-            child: Text('Block 2'),
-          ),
-        ),
-        SizedBox(height: 20),
-        // Third Block
-        Container(
-          height: 100,
-          color: Colors.orange,
-          child: Center(
-            child: Text('Block 3'),
-          ),
-        ),
-        SizedBox(height: 20),
-        // Fourth Block
-        Container(
-          height: 100,
-          color: Colors.purple,
-          child: Center(
-            child: Text('Block 4'),
-          ),
-        ),
-      ],
-    )
-  
         ],
       ),
     );
   }
 }
-    

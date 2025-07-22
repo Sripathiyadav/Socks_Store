@@ -3,6 +3,8 @@ import 'package:socks_store/global/consts.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 class FavoritesScreenBody extends StatelessWidget {
+  const FavoritesScreenBody({super.key});
+
   @override
   Widget build(BuildContext context) {
     return SingleChildScrollView(
