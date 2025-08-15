@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:socks_store/global/consts.dart';
+import 'package:socks_store/screens/HomeScreen/components/productspage.dart';
 
 class HomeScreenBody extends StatelessWidget {
   const HomeScreenBody({super.key});
@@ -80,10 +81,10 @@ class HomeScreenBody extends StatelessWidget {
                   ),
                   child: GestureDetector(
                     onTap: () {
-                      // Navigator.push(
-                      //     context,
-                      //     MaterialPageRoute(
-                      //         builder: (context) => (SignUpScreen())));
+                      Navigator.push(
+                          context,
+                          MaterialPageRoute(
+                              builder: (context) => (Productspage())));
                     },
                     child: Center(
                         child: Text(

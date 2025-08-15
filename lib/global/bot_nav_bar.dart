@@ -19,6 +19,7 @@ class CustomBottomNavBar extends StatefulWidget {
 
 class _CustomBottomNavBarState extends State<CustomBottomNavBar> {
   late int _selectedIndex;
+  int _previousIndex = 0;
 
   final List<Widget> _pages = [
     HomeScreen(),
@@ -34,14 +35,34 @@ class _CustomBottomNavBarState extends State<CustomBottomNavBar> {
   }
 
   void _onItemTapped(int index) {
+    if (_selectedIndex == index) return;
+
     setState(() {
+      _previousIndex = _selectedIndex;
       _selectedIndex = index;
     });
-    Navigator.pushReplacement(
+
+    final isForward = index > _previousIndex;
+
+    Navigator.pushAndRemoveUntil(
       context,
-      MaterialPageRoute(
-        builder: (context) => _pages[_selectedIndex],
+      PageRouteBuilder(
+        pageBuilder: (context, animation, secondaryAnimation) => _pages[index],
+        transitionsBuilder: (context, animation, secondaryAnimation, child) {
+          final begin = Offset(isForward ? 1.0 : -1.0, 0.0);
+          final end = Offset.zero;
+          final curve = Curves.ease;
+
+          final tween =
+              Tween(begin: begin, end: end).chain(CurveTween(curve: curve));
+
+          return SlideTransition(
+            position: animation.drive(tween),
+            child: child,
+          );
+        },
       ),
+      (route) => false,
     );
   }
 
