@@ -18,6 +18,7 @@ class FavoritesScreen extends StatelessWidget {
         return false;
       },
       child: Scaffold(
+        
         backgroundColor: primaryColor,
         body: FavoritesScreenBody(),
         bottomNavigationBar: CustomBottomNavBar(selectedIndex: 2),

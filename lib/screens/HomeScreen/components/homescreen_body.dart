@@ -41,10 +41,18 @@ class HomeScreenBody extends StatelessWidget {
                     color: Color.fromARGB(255, 236, 225, 224),
                     borderRadius: BorderRadius.circular(30.r),
                   ),
-                  child: Image.asset(
-                    socks1,
-                    // scale: 1,
-                    fit: BoxFit.fitHeight,
+                  child: GestureDetector(
+                    onTap: () {
+                      Navigator.push(
+                          context,
+                          MaterialPageRoute(
+                              builder: (context) => (Productspage())));
+                    },
+                    child: Image.asset(
+                      socks1,
+                      // scale: 1,
+                      fit: BoxFit.fitHeight,
+                    ),
                   ),
                 ),
               ),
@@ -56,15 +64,31 @@ class HomeScreenBody extends StatelessWidget {
                   Row(
                     mainAxisAlignment: MainAxisAlignment.spaceAround,
                     children: [
-                      Image.asset(
-                        socks2,
-                        scale: 4,
-                        fit: BoxFit.cover,
+                      GestureDetector(
+                        onTap: () {
+                          Navigator.push(
+                              context,
+                              MaterialPageRoute(
+                                  builder: (context) => (Productspage())));
+                        },
+                        child: Image.asset(
+                          socks2,
+                          scale: 4,
+                          fit: BoxFit.cover,
+                        ),
                       ),
-                      Image.asset(
-                        socks3,
-                        scale: 4,
-                        fit: BoxFit.cover,
+                      GestureDetector(
+                        onTap: () {
+                          Navigator.push(
+                              context,
+                              MaterialPageRoute(
+                                  builder: (context) => (Productspage())));
+                        },
+                        child: Image.asset(
+                          socks3,
+                          scale: 4,
+                          fit: BoxFit.cover,
+                        ),
                       ),
                     ],
                   ),

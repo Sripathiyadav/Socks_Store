@@ -2,10 +2,16 @@ import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:socks_store/screens/NotificationsScreen/components/notification_tile.dart';
 
-class NotificationsScreenBody extends StatelessWidget {
-  NotificationsScreenBody({super.key});
+class NotificationsScreenBody extends StatefulWidget {
+  const NotificationsScreenBody({super.key});
 
-  final List<Map<String, dynamic>> notifications = [
+  @override
+  State<NotificationsScreenBody> createState() =>
+      _NotificationsScreenBodyState();
+}
+
+class _NotificationsScreenBodyState extends State<NotificationsScreenBody> {
+  List<Map<String, dynamic>> notifications = [
     {
       'icon': Icons.notifications,
       'title': 'Welcome!',
@@ -33,6 +39,12 @@ class NotificationsScreenBody extends StatelessWidget {
     },
   ];
 
+  void deleteNotification(int index) {
+    setState(() {
+      notifications.removeAt(index);
+    });
+  }
+
   @override
   Widget build(BuildContext context) {
     return SingleChildScrollView(
@@ -41,11 +53,14 @@ class NotificationsScreenBody extends StatelessWidget {
         child: Column(
           spacing: 10.h,
           children: List.generate(
-              5,
-              (index) => NotificationTile(
-                  icon: notifications[index]["icon"],
-                  title: notifications[index]["title"],
-                  subtitle: notifications[index]["subtitle"])),
+            notifications.length,
+            (index) => NotificationTile(
+              icon: notifications[index]["icon"],
+              title: notifications[index]["title"],
+              subtitle: notifications[index]["subtitle"],
+              onDelete: () => deleteNotification(index),
+            ),
+          ),
         ),
       ),
     );

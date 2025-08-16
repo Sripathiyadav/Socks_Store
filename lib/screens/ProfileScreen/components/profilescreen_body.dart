@@ -3,6 +3,7 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:socks_store/global/consts.dart';
 import 'package:socks_store/screens/ProfileScreen/components/profile_tile.dart';
 import 'package:socks_store/screens/StartScreen/startscreen.dart';
+import 'package:socks_store/screens/HomeScreen/homescreen.dart';
 
 class ProfileScreenBody extends StatelessWidget {
   const ProfileScreenBody({super.key});
@@ -82,6 +83,38 @@ class ProfileScreenBody extends StatelessWidget {
             ),
             SizedBox(
               height: 60.h,
+            ),
+            Center(
+              child: Container(
+                height: 78.h,
+                width: 284.w,
+                decoration: BoxDecoration(
+                  border: Border.all(color: textColor),
+                  borderRadius: BorderRadius.circular(30.h),
+                  color: Colors.white70,
+                  // border: Border.all(color: textColor),
+                ),
+                child: GestureDetector(
+                  onTap: () {
+                    Navigator.push(
+                        context,
+                        MaterialPageRoute(
+                            builder: (context) => (HomeScreen())));
+                  },
+                  child: Center(
+                      child: Text(
+                    "Back to Home",
+                    style: TextStyle(
+                        letterSpacing: 1.sp,
+                        color: textColor,
+                        fontSize: 36.sp,
+                        fontWeight: FontWeight.normal),
+                  )),
+                ),
+              ),
+            ),
+            SizedBox(
+              height: 10.h,
             ),
             Center(
               child: Container(
