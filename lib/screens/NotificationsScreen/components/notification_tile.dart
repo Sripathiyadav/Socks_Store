@@ -57,7 +57,7 @@ class NotificationTile extends StatelessWidget {
             // action: SnackBarAction(
             //   label: 'Undo',
             //   onPressed: () {
-            //     // TODO: Implement undo functionality if needed
+            // TODO: Implement undo functionality if needed
             //     ScaffoldMessenger.of(context).showSnackBar(
             //       SnackBar(content: Text('Undo functionality coming soon!')),
             //     );

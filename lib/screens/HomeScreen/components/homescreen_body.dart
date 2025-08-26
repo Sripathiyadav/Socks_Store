@@ -2,7 +2,6 @@ import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:socks_store/global/consts.dart';
 import 'package:socks_store/screens/HomeScreen/components/productspage.dart';
-import 'package:socks_store/screens/SignUpScreen/components/input_textfield.dart';
 
 class HomeScreenBody extends StatelessWidget {
   const HomeScreenBody({super.key});
