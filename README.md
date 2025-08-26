@@ -1,6 +1,5 @@
 SOCKS_STORE
 
-​
 Table of Contents
 
 Overview
