@@ -7,7 +7,7 @@ class FavoriteItem {
   final String imageUrl;
   final String description;
 
-  FavoriteItem({
+  const FavoriteItem({
     required this.id,
     required this.name,
     required this.price,
@@ -29,6 +29,27 @@ class FavoriteItem {
       imageUrl: imageUrl ?? this.imageUrl,
       description: description ?? this.description,
     );
+  }
+
+  @override
+  bool operator ==(Object other) {
+    if (identical(this, other)) return true;
+    return other is FavoriteItem &&
+        other.id == id &&
+        other.name == name &&
+        other.price == price &&
+        other.imageUrl == imageUrl &&
+        other.description == description;
+  }
+
+  @override
+  int get hashCode {
+    return Object.hash(id, name, price, imageUrl, description);
+  }
+
+  @override
+  String toString() {
+    return 'FavoriteItem(id: $id, name: $name, price: $price)';
   }
 }
 
@@ -76,5 +97,19 @@ class FavoritesProvider extends ChangeNotifier {
   void clearFavorites() {
     _favorites.clear();
     notifyListeners();
+  }
+
+  bool hasFavorites() {
+    return _favorites.isNotEmpty;
+  }
+
+  List<FavoriteItem> searchFavorites(String query) {
+    if (query.isEmpty) return favorites;
+
+    return favorites
+        .where((item) =>
+            item.name.toLowerCase().contains(query.toLowerCase()) ||
+            item.description.toLowerCase().contains(query.toLowerCase()))
+        .toList();
   }
 }

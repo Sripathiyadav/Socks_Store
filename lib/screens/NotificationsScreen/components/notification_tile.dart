@@ -19,7 +19,7 @@ class NotificationTile extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Dismissible(
-      key: Key('${title}_${subtitle}'),
+      key: ValueKey('$title$subtitle'),
       direction: DismissDirection.endToStart, // Only allow left swipe
       background: Container(
         decoration: BoxDecoration(
