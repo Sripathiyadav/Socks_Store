@@ -15,7 +15,7 @@ class DevelopersContact extends StatelessWidget {
         backgroundColor: primaryColor,
         automaticallyImplyLeading: false,
         title: SelectableText(
-          "Developer Contact Information",
+          "Contact Developer",
           style: TextStyle(
               fontSize: 26.sp, color: textColor, fontWeight: FontWeight.w900),
         ),

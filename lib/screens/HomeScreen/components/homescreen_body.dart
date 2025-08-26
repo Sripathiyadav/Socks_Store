@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:socks_store/global/consts.dart';
 import 'package:socks_store/screens/HomeScreen/components/productspage.dart';
+import 'package:socks_store/screens/SignUpScreen/components/input_textfield.dart';
 
 class HomeScreenBody extends StatelessWidget {
   const HomeScreenBody({super.key});
@@ -18,13 +19,14 @@ class HomeScreenBody extends StatelessWidget {
             crossAxisAlignment: CrossAxisAlignment.start,
             mainAxisAlignment: MainAxisAlignment.start,
             children: [
+              SizedBox(height: 10.h),
               Padding(
-                padding: const EdgeInsets.symmetric(vertical: 8.0),
+                padding: EdgeInsets.symmetric(vertical: 8.h),
                 child: Center(
                   child: Text(
                     "NEW ITEMS FOR THE NEW MONTH",
                     style: TextStyle(
-                        fontSize: 26.sp,
+                        fontSize: 16.sp,
                         fontWeight: FontWeight.w400,
                         color: textColor),
                   ),
@@ -59,40 +61,40 @@ class HomeScreenBody extends StatelessWidget {
               SizedBox(
                 height: 20.h,
               ),
-              Wrap(
-                children: [
-                  Row(
-                    mainAxisAlignment: MainAxisAlignment.spaceAround,
-                    children: [
-                      GestureDetector(
-                        onTap: () {
-                          Navigator.push(
-                              context,
-                              MaterialPageRoute(
-                                  builder: (context) => (Productspage())));
-                        },
-                        child: Image.asset(
-                          socks2,
-                          scale: 4,
-                          fit: BoxFit.cover,
-                        ),
+              Center(
+                child: Wrap(
+                  alignment: WrapAlignment.center,
+                  spacing: 16.w,
+                  runSpacing: 16.h,
+                  children: [
+                    GestureDetector(
+                      onTap: () {
+                        Navigator.push(
+                            context,
+                            MaterialPageRoute(
+                                builder: (context) => (Productspage())));
+                      },
+                      child: Image.asset(
+                        socks2,
+                        scale: 6,
+                        fit: BoxFit.cover,
                       ),
-                      GestureDetector(
-                        onTap: () {
-                          Navigator.push(
-                              context,
-                              MaterialPageRoute(
-                                  builder: (context) => (Productspage())));
-                        },
-                        child: Image.asset(
-                          socks3,
-                          scale: 4,
-                          fit: BoxFit.cover,
-                        ),
+                    ),
+                    GestureDetector(
+                      onTap: () {
+                        Navigator.push(
+                            context,
+                            MaterialPageRoute(
+                                builder: (context) => (Productspage())));
+                      },
+                      child: Image.asset(
+                        socks3,
+                        scale: 6,
+                        fit: BoxFit.cover,
                       ),
-                    ],
-                  ),
-                ],
+                    ),
+                  ],
+                ),
               ),
               Center(
                 child: Container(
@@ -121,6 +123,9 @@ class HomeScreenBody extends StatelessWidget {
                     )),
                   ),
                 ),
+              ),
+              SizedBox(
+                height: 20.h,
               ),
             ],
           ),

@@ -7,7 +7,7 @@ class InputTextfield extends StatefulWidget {
   final TextEditingController controller;
   final String hintText;
   final TextInputType? keyboardType;
-   InputTextfield(
+  InputTextfield(
       {super.key,
       this.icon,
       required this.controller,
@@ -23,7 +23,7 @@ class _InputTextfieldState extends State<InputTextfield> {
   Widget build(BuildContext context) {
     return Container(
       height: 60.h,
-      width: 370.w,
+      width: 390.w,
       decoration: BoxDecoration(
         color: primaryColor,
         borderRadius: BorderRadius.circular(10),

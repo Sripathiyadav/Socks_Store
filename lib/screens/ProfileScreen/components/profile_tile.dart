@@ -24,9 +24,14 @@ class ProfileTile extends StatelessWidget {
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
             children: [
               icon,
-              Text(
-                text,
-                style: TextStyle(fontWeight: FontWeight.w900, fontSize: 20.sp),
+              Wrap(
+                children: [
+                  Text(
+                    text,
+                    style:
+                        TextStyle(fontWeight: FontWeight.w900, fontSize: 20.sp),
+                  ),
+                ],
               ),
               Icon(Icons.arrow_forward_ios_outlined)
             ],

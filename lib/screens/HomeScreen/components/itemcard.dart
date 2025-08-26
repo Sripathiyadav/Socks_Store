@@ -57,6 +57,15 @@ class Itemcard extends StatelessWidget {
                 ),
               ),
             ),
+            // Name Section
+            Text(
+              name,
+              style: TextStyle(
+                fontSize: 18.sp,
+                fontWeight: FontWeight.bold,
+                color: textColor,
+              ),
+            ),
 
             // Price and Add to Cart Section
             Expanded(

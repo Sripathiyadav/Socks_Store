@@ -23,7 +23,7 @@ class CartScreen extends StatelessWidget {
         appBar: AppBar(
           automaticallyImplyLeading: false,
           title: Text(
-            'CartScreen',
+            'Cart',
             style: TextStyle(
                 fontSize: 30.sp, color: textColor, fontWeight: FontWeight.bold),
           ),

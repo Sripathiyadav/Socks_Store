@@ -1,6 +1,6 @@
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:provider/provider.dart';
 import 'package:flutter/material.dart';
-import 'package:lottie/lottie.dart';
 import 'package:socks_store/global/consts.dart';
 
 // Cart Item Model
@@ -71,24 +71,11 @@ class CartScreenBody extends StatelessWidget {
   }
 
   Widget _buildEmptyCart() {
-    return Column(
-      mainAxisAlignment: MainAxisAlignment.center,
-      crossAxisAlignment: CrossAxisAlignment.center,
-      children: [
-        Lottie.asset(
-          "assets/Vector-1.json",
-          width: 200,
-          height: 200,
-          fit: BoxFit.contain,
-          repeat: false,
-          animate: true,
-        ),
-        const SizedBox(height: 16),
-        const Text(
-          "Your cart is empty!",
-          style: TextStyle(fontSize: 18, fontWeight: FontWeight.w500),
-        ),
-      ],
+    return Center(
+      child: Text(
+        "Your cart is empty!",
+        style: TextStyle(fontSize: 18.sp, fontWeight: FontWeight.w700),
+      ),
     );
   }
 

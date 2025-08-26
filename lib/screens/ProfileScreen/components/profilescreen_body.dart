@@ -71,7 +71,7 @@ class ProfileScreenBody extends StatelessWidget {
               height: 10.h,
             ),
             ProfileTile(
-              text: "Help & Support for your Projects",
+              text: "Help & Support",
               icon: Icon(Icons.help),
             ),
             SizedBox(
@@ -107,7 +107,7 @@ class ProfileScreenBody extends StatelessWidget {
                     style: TextStyle(
                         letterSpacing: 1.sp,
                         color: textColor,
-                        fontSize: 36.sp,
+                        fontSize: 26.sp,
                         fontWeight: FontWeight.normal),
                   )),
                 ),
@@ -139,7 +139,7 @@ class ProfileScreenBody extends StatelessWidget {
                     style: TextStyle(
                         letterSpacing: 1.sp,
                         color: textColor,
-                        fontSize: 36.sp,
+                        fontSize: 26.sp,
                         fontWeight: FontWeight.normal),
                   )),
                 ),

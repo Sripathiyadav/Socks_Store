@@ -38,7 +38,7 @@ class SigninScreenBody extends StatelessWidget {
                         "SIGN IN",
                         style: TextStyle(
                           color: textColor,
-                          fontSize: 48.sp,
+                          fontSize: 38.sp,
                           fontWeight: FontWeight.w400,
                         ),
                       ),
@@ -104,7 +104,7 @@ class SigninScreenBody extends StatelessWidget {
                         ),
                       ),
                       SizedBox(
-                        height: 50.h,
+                        height: 30.h,
                       ),
                       Center(
                         child: GestureDetector(
@@ -127,14 +127,14 @@ class SigninScreenBody extends StatelessWidget {
                               style: TextStyle(
                                   letterSpacing: 1.sp,
                                   color: textColor,
-                                  fontSize: 36.sp,
+                                  fontSize: 26.sp,
                                   fontWeight: FontWeight.normal),
                             )),
                           ),
                         ),
                       ),
                       SizedBox(
-                        height: 20.h,
+                        height: 10.h,
                       ),
                       Row(
                         mainAxisAlignment: MainAxisAlignment.center,

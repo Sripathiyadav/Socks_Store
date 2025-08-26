@@ -18,7 +18,7 @@ class HomeScreen extends StatelessWidget {
       child: Scaffold(
         appBar: AppBar(
           automaticallyImplyLeading: false,
-          toolbarHeight: 120.h,
+          toolbarHeight: 160.h,
           flexibleSpace: Padding(
             padding: EdgeInsets.only(left: 16.w, right: 16.w, top: 40.h),
             child: Column(
@@ -57,6 +57,7 @@ class HomeScreen extends StatelessWidget {
                     hintText: "Search",
                   ),
                 ),
+                SizedBox(height: 10.h),
               ],
             ),
           ),
