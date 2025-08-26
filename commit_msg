@@ -1,0 +1,27 @@
+updated readmefile
+
+# Conflicts:
+#	README.md
+
+# Please enter the commit message for your changes. Lines starting
+# with '#' will be ignored, and an empty message aborts the commit.
+#
+# interactive rebase in progress; onto 6a04460
+# Last command done (1 command done):
+#    pick 03ff81e updated readmefile
+# No commands remaining.
+# You are currently rebasing branch 'main' on '6a04460'.
+#
+# Changes to be committed:
+#	modified:   README.md
+#	modified:   android/app/build.gradle
+#	modified:   android/gradle.properties
+#	modified:   android/gradle/wrapper/gradle-wrapper.properties
+#	modified:   android/settings.gradle
+#	modified:   lib/main.dart
+#	modified:   lib/screens/CartScreen/components/cartscreen_body.dart
+#	modified:   lib/screens/FavoritesScreen/components/favorites_provider.dart
+#	modified:   lib/screens/HomeScreen/components/item_info_page.dart
+#	modified:   lib/screens/NotificationsScreen/components/notification_tile.dart
+#
+
