@@ -1,11 +1,12 @@
 import 'package:flutter/material.dart';
+import 'package:socks_store/global/bot_nav_bar.dart';
 import 'package:socks_store/global/consts.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:provider/provider.dart';
+import 'package:socks_store/screens/CartScreen/components/cart_provider.dart';
 import 'package:socks_store/screens/FavoritesScreen/components/favorites_provider.dart';
 import 'package:socks_store/screens/HomeScreen/components/item_info_page.dart';
-import 'package:socks_store/screens/CartScreen/components/cartscreen_body.dart';
-import 'package:socks_store/screens/CartScreen/cartscreen.dart';
+import 'package:socks_store/screens/HomeScreen/components/productspage.dart';
 
 class FavoritesScreenBody extends StatelessWidget {
   const FavoritesScreenBody({super.key});
@@ -43,6 +44,37 @@ class FavoritesScreenBody extends StatelessWidget {
                     color: Colors.grey[600],
                   ),
                   textAlign: TextAlign.center,
+                ),
+
+                // add to fevorites button
+                SizedBox(height: 30.h),
+
+                Center(
+                  child: GestureDetector(
+                    onTap: () {
+                      Navigator.push(
+                          context,
+                          MaterialPageRoute(
+                              builder: (context) => Productspage()));
+                    },
+                    child: Container(
+                      height: 58.h,
+                      width: 204.w,
+                      decoration: BoxDecoration(
+                          borderRadius: BorderRadius.circular(30.h),
+                          color: Colors.white,
+                          border: Border.all(color: textColor)),
+                      child: Center(
+                          child: Text(
+                        "ADD",
+                        style: TextStyle(
+                            letterSpacing: 1.sp,
+                            color: textColor,
+                            fontSize: 26.sp,
+                            fontWeight: FontWeight.normal),
+                      )),
+                    ),
+                  ),
                 ),
               ],
             ),
@@ -83,19 +115,12 @@ class FavoritesScreenBody extends StatelessWidget {
                           ),
                         );
                       },
-                      child: Container(
-                        margin: EdgeInsets.only(bottom: 16.h),
-                        decoration: BoxDecoration(
-                          color: Colors.white,
+                      child: Card(
+                        shape: RoundedRectangleBorder(
                           borderRadius: BorderRadius.circular(16.r),
-                          boxShadow: [
-                            BoxShadow(
-                              color: Colors.black.withOpacity(0.1),
-                              blurRadius: 4,
-                              offset: const Offset(0, 2),
-                            ),
-                          ],
                         ),
+                        elevation: 4,
+                        margin: EdgeInsets.only(bottom: 16.h),
                         child: ListTile(
                           contentPadding: EdgeInsets.all(16.r),
                           leading: Container(
@@ -163,7 +188,9 @@ class FavoritesScreenBody extends StatelessWidget {
                                                   pageBuilder: (context,
                                                           animation,
                                                           secondaryAnimation) =>
-                                                      const CartScreen(),
+                                                      CustomBottomNavBar(
+                                                    selectedIndex: 3,
+                                                  ),
                                                   transitionsBuilder: (context,
                                                       animation,
                                                       secondaryAnimation,

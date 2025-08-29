@@ -1,10 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:provider/provider.dart';
-import 'package:socks_store/screens/CartScreen/components/cartscreen_body.dart';
+import 'package:socks_store/screens/CartScreen/components/cart_provider.dart';
 import 'package:socks_store/screens/HomeScreen/components/item_info_page.dart';
-import 'package:socks_store/screens/CartScreen/cartscreen.dart';
 import 'package:socks_store/global/consts.dart';
+import 'package:socks_store/global/bot_nav_bar.dart';
 
 // ignore: camel_case_types
 class Itemcard extends StatelessWidget {
@@ -18,6 +18,27 @@ class Itemcard extends StatelessWidget {
     required this.price,
     required this.image,
   });
+
+  void _navigateToCart(BuildContext context) {
+    Navigator.push(
+      context,
+      PageRouteBuilder(
+        pageBuilder: (context, animation, secondaryAnimation) =>
+            const CustomBottomNavBar(selectedIndex: 3),
+        transitionsBuilder: (context, animation, secondaryAnimation, child) {
+          const begin = Offset(1.0, 0.0);
+          const end = Offset.zero;
+          const curve = Curves.ease;
+          final tween =
+              Tween(begin: begin, end: end).chain(CurveTween(curve: curve));
+          return SlideTransition(
+            position: animation.drive(tween),
+            child: child,
+          );
+        },
+      ),
+    );
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -105,30 +126,7 @@ class Itemcard extends StatelessWidget {
                                   textColor: Colors.white,
                                   onPressed: () {
                                     // Navigate to cart screen (index 3 in bottom nav)
-                                    Navigator.pushAndRemoveUntil(
-                                      context,
-                                      PageRouteBuilder(
-                                        pageBuilder: (context, animation,
-                                                secondaryAnimation) =>
-                                            const CartScreen(),
-                                        transitionsBuilder: (context, animation,
-                                            secondaryAnimation, child) {
-                                          const begin = Offset(1.0, 0.0);
-                                          const end = Offset.zero;
-                                          const curve = Curves.ease;
-
-                                          final tween = Tween(
-                                                  begin: begin, end: end)
-                                              .chain(CurveTween(curve: curve));
-
-                                          return SlideTransition(
-                                            position: animation.drive(tween),
-                                            child: child,
-                                          );
-                                        },
-                                      ),
-                                      (route) => false,
-                                    );
+                                    _navigateToCart(context);
                                   },
                                 ),
                               ),

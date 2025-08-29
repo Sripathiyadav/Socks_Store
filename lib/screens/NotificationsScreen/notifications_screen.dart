@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:socks_store/global/bot_nav_bar.dart';
 import 'package:socks_store/global/consts.dart';
 import 'package:socks_store/screens/HomeScreen/homescreen.dart';
 import 'components/notifications_screen_body.dart';
@@ -18,18 +17,23 @@ class NotificationsScreen extends StatelessWidget {
         );
         return false;
       },
-      child: Scaffold(
-        backgroundColor: primaryColor,
-        appBar: AppBar(
-          automaticallyImplyLeading: false,
-          title: Text(
-            "Notifications",
-            style: TextStyle(
-                fontSize: 30.sp, color: textColor, fontWeight: FontWeight.bold),
+      child: Column(
+        children: [
+          AppBar(
+            automaticallyImplyLeading: false,
+            title: Text(
+              "Notifications",
+              style: TextStyle(
+                fontSize: 30.sp,
+                color: textColor,
+                fontWeight: FontWeight.bold,
+              ),
+            ),
           ),
-        ),
-        body: NotificationsScreenBody(),
-        bottomNavigationBar: CustomBottomNavBar(selectedIndex: 1),
+          Expanded(
+            child: NotificationsScreenBody(),
+          ),
+        ],
       ),
     );
   }

@@ -1,11 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:provider/provider.dart';
+import 'package:socks_store/global/bot_nav_bar.dart';
 import 'package:socks_store/global/consts.dart';
-import 'package:socks_store/screens/CartScreen/components/cartscreen_body.dart';
-import 'package:socks_store/screens/CartScreen/cartscreen.dart';
+import 'package:socks_store/screens/CartScreen/components/cart_provider.dart';
 import 'package:socks_store/screens/FavoritesScreen/components/favorites_provider.dart';
-import 'package:socks_store/screens/FavoritesScreen/favorites_screen.dart';
 
 class ItemInfoPage extends StatefulWidget {
   final String name;
@@ -116,15 +115,13 @@ class _ItemInfoPageState extends State<ItemInfoPage> {
       context,
       PageRouteBuilder(
         pageBuilder: (context, animation, secondaryAnimation) =>
-            const FavoritesScreen(),
+            CustomBottomNavBar(selectedIndex: 2),
         transitionsBuilder: (context, animation, secondaryAnimation, child) {
           const begin = Offset(1.0, 0.0);
           const end = Offset.zero;
           const curve = Curves.ease;
-
           final tween =
               Tween(begin: begin, end: end).chain(CurveTween(curve: curve));
-
           return SlideTransition(
             position: animation.drive(tween),
             child: child,
@@ -336,26 +333,24 @@ class _ItemInfoPageState extends State<ItemInfoPage> {
   }
 
   void _navigateToCart() {
-    Navigator.pushAndRemoveUntil(
+    Navigator.push(
       context,
       PageRouteBuilder(
         pageBuilder: (context, animation, secondaryAnimation) =>
-            const CartScreen(),
+            CustomBottomNavBar(selectedIndex: 3),
         transitionsBuilder: (context, animation, secondaryAnimation, child) {
           const begin = Offset(1.0, 0.0);
           const end = Offset.zero;
           const curve = Curves.ease;
-
           final tween =
               Tween(begin: begin, end: end).chain(CurveTween(curve: curve));
-
           return SlideTransition(
             position: animation.drive(tween),
             child: child,
           );
         },
       ),
-      (route) => false,
+      // (route) => false,
     );
   }
 

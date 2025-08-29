@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:socks_store/global/bot_nav_bar.dart';
 import 'package:socks_store/global/consts.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:socks_store/screens/HomeScreen/homescreen.dart';
 import 'package:socks_store/screens/ProfileScreen/components/contact_tile.dart';
 
 class DevelopersContact extends StatelessWidget {
@@ -81,7 +81,9 @@ class DevelopersContact extends StatelessWidget {
                       Navigator.push(
                           context,
                           MaterialPageRoute(
-                              builder: (context) => (HomeScreen())));
+                              builder: (context) => (CustomBottomNavBar(
+                                    selectedIndex: 0,
+                                  ))));
                     },
                     child: Center(
                         child: Text(

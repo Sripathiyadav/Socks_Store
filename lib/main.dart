@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:google_fonts/google_fonts.dart';
-import 'package:socks_store/screens/CartScreen/components/cartscreen_body.dart';
+import 'package:socks_store/screens/CartScreen/components/cart_provider.dart';
 import 'package:socks_store/screens/FavoritesScreen/components/favorites_provider.dart';
 import 'package:socks_store/screens/StartScreen/startscreen.dart';
 import 'package:provider/provider.dart';

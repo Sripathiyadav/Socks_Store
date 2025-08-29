@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:socks_store/global/bot_nav_bar.dart';
 import 'package:socks_store/global/consts.dart';
 import 'package:socks_store/screens/HomeScreen/homescreen.dart';
 import 'components/favorites_screen_body.dart';
@@ -17,11 +16,23 @@ class FavoritesScreen extends StatelessWidget {
         );
         return false;
       },
-      child: Scaffold(
-        
-        backgroundColor: primaryColor,
-        body: FavoritesScreenBody(),
-        bottomNavigationBar: CustomBottomNavBar(selectedIndex: 2),
+      child: Column(
+        children: [
+          AppBar(
+            automaticallyImplyLeading: false,
+            title: Text(
+              'Favorites',
+              style: TextStyle(
+                fontSize: 30,
+                color: textColor,
+                fontWeight: FontWeight.bold,
+              ),
+            ),
+          ),
+          Expanded(
+            child: FavoritesScreenBody(),
+          ),
+        ],
       ),
     );
   }

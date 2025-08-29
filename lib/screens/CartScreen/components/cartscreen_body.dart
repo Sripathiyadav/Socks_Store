@@ -2,55 +2,8 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:provider/provider.dart';
 import 'package:flutter/material.dart';
 import 'package:socks_store/global/consts.dart';
-
-// Cart Item Model
-class CartItem {
-  final String id;
-  final String name;
-  final double price;
-  final String? imageUrl;
-  final int quantity;
-
-  const CartItem({
-    required this.id,
-    required this.name,
-    required this.price,
-    this.imageUrl,
-    this.quantity = 1,
-  });
-
-  CartItem copyWith({
-    String? id,
-    String? name,
-    double? price,
-    String? imageUrl,
-    int? quantity,
-  }) {
-    return CartItem(
-      id: id ?? this.id,
-      name: name ?? this.name,
-      price: price ?? this.price,
-      imageUrl: imageUrl ?? this.imageUrl,
-      quantity: quantity ?? this.quantity,
-    );
-  }
-
-  @override
-  bool operator ==(Object other) {
-    if (identical(this, other)) return true;
-    return other is CartItem &&
-        other.id == id &&
-        other.name == name &&
-        other.price == price &&
-        other.imageUrl == imageUrl &&
-        other.quantity == quantity;
-  }
-
-  @override
-  int get hashCode {
-    return Object.hash(id, name, price, imageUrl, quantity);
-  }
-}
+import 'package:socks_store/screens/HomeScreen/components/productspage.dart';
+import 'package:socks_store/screens/CartScreen/components/cart_provider.dart';
 
 class CartScreenBody extends StatelessWidget {
   const CartScreenBody({super.key});
@@ -62,7 +15,7 @@ class CartScreenBody extends StatelessWidget {
         final cartItems = cartProvider.cartItems;
 
         if (cartItems.isEmpty) {
-          return _buildEmptyCart();
+          return _buildEmptyCart(context);
         } else {
           return _buildCartWithItems(cartProvider, cartItems);
         }
@@ -70,11 +23,45 @@ class CartScreenBody extends StatelessWidget {
     );
   }
 
-  Widget _buildEmptyCart() {
+  Widget _buildEmptyCart(BuildContext context) {
     return Center(
-      child: Text(
-        "Your cart is empty!",
-        style: TextStyle(fontSize: 18.sp, fontWeight: FontWeight.w700),
+      child: Column(
+        mainAxisAlignment: MainAxisAlignment.center,
+        children: [
+          Text(
+            "Your cart is empty!",
+            style: TextStyle(fontSize: 18.sp, fontWeight: FontWeight.w700),
+          ),
+          SizedBox(height: 30.h),
+          GestureDetector(
+            onTap: () {
+              Navigator.push(
+                context,
+                MaterialPageRoute(builder: (context) => Productspage()),
+              );
+            },
+            child: Container(
+              height: 58.h,
+              width: 124.w,
+              decoration: BoxDecoration(
+                borderRadius: BorderRadius.circular(30.h),
+                color: Colors.white,
+                border: Border.all(color: textColor),
+              ),
+              child: Center(
+                child: Text(
+                  "ADD",
+                  style: TextStyle(
+                    letterSpacing: 1.sp,
+                    color: textColor,
+                    fontSize: 26.sp,
+                    fontWeight: FontWeight.normal,
+                  ),
+                ),
+              ),
+            ),
+          ),
+        ],
       ),
     );
   }
@@ -107,19 +94,12 @@ class CartScreenBody extends StatelessWidget {
         cartProvider.removeFromCart(item.id);
         // Note: In a real app, you might want to show a snackbar here
       },
-      child: Container(
-        margin: const EdgeInsets.only(bottom: 12.0),
-        decoration: BoxDecoration(
-          color: Colors.white,
+      child: Card(
+        shape: RoundedRectangleBorder(
           borderRadius: BorderRadius.circular(16.0),
-          boxShadow: [
-            BoxShadow(
-              color: Colors.black.withOpacity(0.1),
-              blurRadius: 4,
-              offset: const Offset(0, 2),
-            ),
-          ],
         ),
+        elevation: 4,
+        margin: const EdgeInsets.only(bottom: 12.0),
         child: Padding(
           padding: const EdgeInsets.all(16.0),
           child: Row(
@@ -355,62 +335,5 @@ class CartScreenBody extends StatelessWidget {
         ),
       ),
     );
-  }
-}
-
-class CartProvider extends ChangeNotifier {
-  final Map<String, CartItem> _items = {};
-
-  List<CartItem> get cartItems => _items.values.toList();
-
-  int get itemCount => _items.length;
-
-  double get total =>
-      _items.values.fold(0, (sum, item) => sum + (item.price * item.quantity));
-
-  void addToCart(String name, double price, {String? imageUrl}) {
-    // Check if an item with the same name and price already exists
-    final existingItemKey = _items.keys.firstWhere(
-      (key) => _items[key]!.name == name && _items[key]!.price == price,
-      orElse: () => '',
-    );
-
-    if (existingItemKey.isNotEmpty) {
-      // Item already exists, increase quantity
-      _items[existingItemKey] = _items[existingItemKey]!.copyWith(
-        quantity: _items[existingItemKey]!.quantity + 1,
-      );
-    } else {
-      // New item, create with unique ID
-      final id = DateTime.now().millisecondsSinceEpoch.toString();
-      _items[id] = CartItem(
-        id: id,
-        name: name,
-        price: price,
-        imageUrl: imageUrl,
-      );
-    }
-    notifyListeners();
-  }
-
-  void removeFromCart(String id) {
-    _items.remove(id);
-    notifyListeners();
-  }
-
-  void updateQuantity(String id, int quantity) {
-    if (_items.containsKey(id)) {
-      if (quantity <= 0) {
-        _items.remove(id);
-      } else {
-        _items[id] = _items[id]!.copyWith(quantity: quantity);
-      }
-      notifyListeners();
-    }
-  }
-
-  void clearCart() {
-    _items.clear();
-    notifyListeners();
   }
 }

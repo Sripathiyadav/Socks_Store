@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:socks_store/global/bot_nav_bar.dart';
 import 'package:socks_store/global/consts.dart';
 import 'package:socks_store/screens/HomeScreen/homescreen.dart';
 import 'package:socks_store/screens/SignUpScreen/components/input_textfield.dart';
@@ -112,7 +113,9 @@ class SigninScreenBody extends StatelessWidget {
                             Navigator.push(
                                 context,
                                 MaterialPageRoute(
-                                    builder: (context) => (HomeScreen())));
+                                    builder: (context) => (CustomBottomNavBar(
+                                          selectedIndex: 0,
+                                        ))));
                           },
                           child: Container(
                             height: 78.h,
