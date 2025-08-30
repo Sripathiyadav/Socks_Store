@@ -1,5 +1,9 @@
 # 🧦 Socks Store
 
+![Frame 1](assets/mockups/frame1.png)
+![Frame 2](assets/mockups/frame2.png)
+![Frame 3](assets/mockups/frame3.png)
+
 ## 📑 Table of Contents
 - [Overview](#overview)
 - [Why Socks Store?](#why-socks-store)

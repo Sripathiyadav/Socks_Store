@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:socks_store/global/bot_nav_bar.dart';
 import 'package:socks_store/global/consts.dart';
-import 'package:socks_store/screens/HomeScreen/homescreen.dart';
 import 'components/favorites_screen_body.dart';
 
 class FavoritesScreen extends StatelessWidget {
