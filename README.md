@@ -1,8 +1,8 @@
 # 🧦 Socks Store
 
-![Frame 1](assets/mockups/Frame1.png)
-![Frame 2](assets/mockups/Frame2.png)
-![Frame 3](assets/mockups/Frame3.png)
+<img src="assets/mockups/Frame1.png" alt="Frame 1" width="250"/>
+<img src="assets/mockups/Frame2.png" alt="Frame 2" width="250"/>
+<img src="assets/mockups/Frame3.png" alt="Frame 3" width="250"/>
 
 ## 📑 Table of Contents
 - [Overview](#overview)
