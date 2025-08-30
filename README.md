@@ -1,8 +1,10 @@
 # 🧦 Socks Store
 
-<img src="assets/mockups/Frame1.png" alt="Frame 1" width="250"/>
-<img src="assets/mockups/Frame2.png" alt="Frame 2" width="250"/>
-<img src="assets/mockups/Frame3.png" alt="Frame 3" width="250"/>
+<p style="display: flex; gap: 10px;">
+  <img src="assets/mockups/Frame1.png" alt="Frame 1" width="250"/>
+  <img src="assets/mockups/Frame2.png" alt="Frame 2" width="250"/>
+  <img src="assets/mockups/Frame3.png" alt="Frame 3" width="250"/>
+</p>
 
 ## 📑 Table of Contents
 - [Overview](#overview)
