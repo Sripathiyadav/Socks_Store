@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:socks_store/global/bot_nav_bar.dart';
 import 'package:socks_store/global/consts.dart';
 import 'package:socks_store/screens/HomeScreen/homescreen.dart';
 import 'components/cartscreen_body.dart';
@@ -13,7 +14,7 @@ class CartScreen extends StatelessWidget {
       onWillPop: () async {
         Navigator.pushReplacement(
           context,
-          MaterialPageRoute(builder: (context) => HomeScreen()),
+          MaterialPageRoute(builder: (context) => CustomBottomNavBar(selectedIndex: 0,)),
         );
         return false;
       },
