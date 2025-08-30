@@ -93,7 +93,9 @@ class SignUpScreenBody extends StatelessWidget {
                             Navigator.push(
                                 context,
                                 MaterialPageRoute(
-                                    builder: (context) => (HomeScreen())));
+                                    builder: (context) => (CustomBottomNavBar(
+                                          selectedIndex: 0,
+                                        ))));
                           },
                           child: Text(
                             "Forget Password",
