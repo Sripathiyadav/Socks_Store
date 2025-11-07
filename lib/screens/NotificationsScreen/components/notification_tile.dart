@@ -51,20 +51,6 @@ class NotificationTile extends StatelessWidget {
       ),
       onDismissed: (direction) {
         onDelete?.call();
-        ScaffoldMessenger.of(context).showSnackBar(
-          SnackBar(
-            content: Text('Notification deleted'),
-            // action: SnackBarAction(
-            //   label: 'Undo',
-            //   onPressed: () {
-            // TODO: Implement undo functionality if needed
-            //     ScaffoldMessenger.of(context).showSnackBar(
-            //       SnackBar(content: Text('Undo functionality coming soon!')),
-            //     );
-            //   },
-            // ),
-          ),
-        );
       },
       child: Container(
         height: 80.h,

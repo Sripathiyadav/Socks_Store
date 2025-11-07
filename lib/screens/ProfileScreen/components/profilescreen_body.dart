@@ -17,7 +17,7 @@ class ProfileScreenBody extends StatelessWidget {
           children: [
             Text(
               textAlign: TextAlign.center,
-              "Please note that each tile is linked to the developer’s contact information.",
+              "Please note that each tile is linked to my contact information.",
               style: TextStyle(
                 fontWeight: FontWeight.normal,
                 fontSize: 12.sp,
@@ -121,7 +121,7 @@ class ProfileScreenBody extends StatelessWidget {
             Center(
               child: Container(
                 height: 78.h,
-                width: 284.w,
+                width: 180.w,
                 decoration: BoxDecoration(
                   border: Border.all(color: textColor),
                   borderRadius: BorderRadius.circular(30.h),

@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 
-const primaryColor = Color.fromARGB(255, 226, 188, 183);
+const primaryColor = Color(0xFFE2BCB7);
 const textColor = Color.fromARGB(255, 78, 53, 47);
 
 const String getstartedimg = "assets/1 1.png";
@@ -16,3 +16,4 @@ const String github = "assets/github.png";
 const String instagram = "assets/instagram.png";
 const String web = "assets/web.png";
 const String gmail = "assets/gmail.png";
+const String checkout = "assets/checkout.json";

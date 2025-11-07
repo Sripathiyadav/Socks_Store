@@ -2,6 +2,7 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:provider/provider.dart';
 import 'package:flutter/material.dart';
 import 'package:socks_store/global/consts.dart';
+import 'package:socks_store/screens/CartScreen/components/checkout.dart';
 import 'package:socks_store/screens/HomeScreen/components/productspage.dart';
 import 'package:socks_store/screens/CartScreen/components/cart_provider.dart';
 
@@ -17,7 +18,7 @@ class CartScreenBody extends StatelessWidget {
         if (cartItems.isEmpty) {
           return _buildEmptyCart(context);
         } else {
-          return _buildCartWithItems(cartProvider, cartItems);
+          return _buildCartWithItems(context, cartProvider, cartItems);
         }
       },
     );
@@ -66,7 +67,7 @@ class CartScreenBody extends StatelessWidget {
     );
   }
 
-  Widget _buildCartWithItems(
+  Widget _buildCartWithItems(BuildContext context,
       CartProvider cartProvider, List<CartItem> cartItems) {
     return Column(
       children: [
@@ -80,7 +81,7 @@ class CartScreenBody extends StatelessWidget {
             },
           ),
         ),
-        _buildCheckoutSection(cartProvider, cartItems),
+        _buildCheckoutSection(context, cartProvider, cartItems),
       ],
     );
   }
@@ -252,7 +253,7 @@ class CartScreenBody extends StatelessWidget {
     );
   }
 
-  Widget _buildCheckoutSection(
+  Widget _buildCheckoutSection(BuildContext context,
       CartProvider cartProvider, List<CartItem> cartItems) {
     return Padding(
       padding: const EdgeInsets.all(16.0),
@@ -318,7 +319,10 @@ class CartScreenBody extends StatelessWidget {
               child: ElevatedButton(
                 onPressed: cartItems.isNotEmpty
                     ? () {
-                        // TODO: Implement checkout logic
+                        Navigator.push(
+                          context,
+                          MaterialPageRoute(builder: (context) => Checkout()),
+                        );
                         // Note: In a real app, you would navigate to checkout
                       }
                     : null,

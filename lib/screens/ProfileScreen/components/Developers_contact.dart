@@ -67,39 +67,50 @@ class DevelopersContact extends StatelessWidget {
                 height: 60.h,
               ),
               Center(
-                child: Container(
-                  height: 78.h,
-                  width: 284.w,
-                  decoration: BoxDecoration(
-                    border: Border.all(color: textColor),
-                    borderRadius: BorderRadius.circular(30.h),
-                    color: Colors.white70,
-                    // border: Border.all(color: textColor),
-                  ),
-                  child: GestureDetector(
-                    onTap: () {
-                      Navigator.push(
-                          context,
-                          MaterialPageRoute(
-                              builder: (context) => (CustomBottomNavBar(
-                                    selectedIndex: 0,
-                                  ))));
-                    },
-                    child: Center(
-                        child: Text(
-                      "Back to Home",
-                      style: TextStyle(
-                          letterSpacing: 1.sp,
-                          color: textColor,
-                          fontSize: 36.sp,
-                          fontWeight: FontWeight.normal),
-                    )),
-                  ),
-                ),
+                child: backtohomebutton(),
               ),
             ],
           ),
         ),
+      ),
+    );
+  }
+}
+
+class backtohomebutton extends StatelessWidget {
+  const backtohomebutton({
+    super.key,
+  });
+
+  @override
+  Widget build(BuildContext context) {
+    return Container(
+      height: 78.h,
+      width: 284.w,
+      decoration: BoxDecoration(
+        border: Border.all(color: textColor),
+        borderRadius: BorderRadius.circular(30.h),
+        color: Colors.white70,
+        // border: Border.all(color: textColor),
+      ),
+      child: GestureDetector(
+        onTap: () {
+          Navigator.push(
+              context,
+              MaterialPageRoute(
+                  builder: (context) => (CustomBottomNavBar(
+                        selectedIndex: 0,
+                      ))));
+        },
+        child: Center(
+            child: Text(
+          "Back to Home",
+          style: TextStyle(
+              letterSpacing: 1.sp,
+              color: textColor,
+              fontSize: 36.sp,
+              fontWeight: FontWeight.normal),
+        )),
       ),
     );
   }

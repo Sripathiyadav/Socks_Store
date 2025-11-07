@@ -86,7 +86,7 @@ class StartScreenBody extends StatelessWidget {
           padding: EdgeInsets.symmetric(horizontal: 12.w),
           child: SelectableText(
             textAlign: TextAlign.justify,
-            "This prototype app showcases the developer’s coding skills. It does not connect to any online stores or databases. For inquiries or access to the source code, please use the links in the profile section.",
+            "This prototype app showcases my coding skills. It does not connect to any online stores or databases. For inquiries or access to the source code, please use the links in the profile section.",
             style: TextStyle(
               fontSize: 12.sp,
               color: textColor,

@@ -6,7 +6,7 @@ import 'package:socks_store/screens/FavoritesScreen/components/favorites_provide
 import 'package:socks_store/screens/StartScreen/startscreen.dart';
 import 'package:provider/provider.dart';
 
-void main() {
+void main() async {
   WidgetsFlutterBinding.ensureInitialized();
   runApp(const MyApp());
 }

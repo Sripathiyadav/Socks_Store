@@ -2,7 +2,6 @@ import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:socks_store/global/bot_nav_bar.dart';
 import 'package:socks_store/global/consts.dart';
-import 'package:socks_store/screens/HomeScreen/homescreen.dart';
 import 'package:socks_store/screens/SignUpScreen/components/input_textfield.dart';
 import 'package:socks_store/screens/SignUpScreen/signup_screen.dart';
 
