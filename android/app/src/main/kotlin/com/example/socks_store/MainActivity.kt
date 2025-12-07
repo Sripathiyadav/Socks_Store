@@ -1,4 +1,4 @@
-package com.example.socks_store
+package com.sripathi.socks_store
 
 import io.flutter.embedding.android.FlutterActivity
 

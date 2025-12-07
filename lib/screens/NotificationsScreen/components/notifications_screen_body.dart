@@ -31,31 +31,11 @@ class _NotificationsScreenBodyState extends State<NotificationsScreenBody> {
       });
     } else {
       notifications = [
-        {
-          'icon': Icons.notifications.codePoint,
-          'title': 'Welcome!',
-          'subtitle': 'Thanks for signing up.'
-        },
-        {
-          'icon': Icons.update.codePoint,
-          'title': 'Update Required',
-          'subtitle': 'Please update the app to continue.'
-        },
-        {
-          'icon': Icons.message.codePoint,
-          'title': 'New Message',
-          'subtitle': 'You have a new message from support.'
-        },
-        {
-          'icon': Icons.event.codePoint,
-          'title': 'Event Reminder',
-          'subtitle': 'Don\'t forget the event tomorrow.'
-        },
-        {
-          'icon': Icons.info.codePoint,
-          'title': 'Info',
-          'subtitle': 'Some useful information for you.'
-        },
+        {'icon': 'notifications', 'title': 'Welcome!', 'subtitle': 'Thanks for signing up.'},
+        {'icon': 'update', 'title': 'Update Required', 'subtitle': 'Please update the app to continue.'},
+        {'icon': 'message', 'title': 'New Message', 'subtitle': 'You have a new message from support.'},
+        {'icon': 'event', 'title': 'Event Reminder', 'subtitle': 'Don\'t forget the event tomorrow.'},
+        {'icon': 'info', 'title': 'Info', 'subtitle': 'Some useful information for you.'},
       ];
       await _saveNotifications();
     }
@@ -73,6 +53,14 @@ class _NotificationsScreenBodyState extends State<NotificationsScreenBody> {
     await _saveNotifications();
   }
 
+  final Map<String, IconData> iconMap = {
+    'notifications': Icons.notifications,
+    'update': Icons.update,
+    'message': Icons.message,
+    'event': Icons.event,
+    'info': Icons.info,
+  };
+
   @override
   Widget build(BuildContext context) {
     return SingleChildScrollView(
@@ -83,7 +71,7 @@ class _NotificationsScreenBodyState extends State<NotificationsScreenBody> {
           children: List.generate(
             notifications.length,
             (index) => NotificationTile(
-              icon: IconData(notifications[index]["icon"], fontFamily: 'MaterialIcons'),
+              icon: iconMap[notifications[index]["icon"]] ?? Icons.notifications,
               title: notifications[index]["title"],
               subtitle: notifications[index]["subtitle"],
               onDelete: () => _deleteNotification(index),
